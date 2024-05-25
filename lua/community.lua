@@ -5,15 +5,15 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
 
   -- UI
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
 
-  -- Pack
+  -- Language Support
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.json" },
@@ -52,6 +52,6 @@ return {
     },
   },
 
-  -- VSCode integration
+  -- VSCode Integration
   { import = "astrocommunity.recipes.vscode" },
 }

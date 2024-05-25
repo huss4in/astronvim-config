@@ -17,7 +17,7 @@ return {
       status = {
         -- define the separators between each section
         separators = {
-          left = { "", "" }, -- separator for the left side of the statusline
+          left = { "", "" }, -- separator for the left side of the statusline
           right = { " ", "" }, -- separator for the right side of the statusline
           tab = { "", "" },
         },
@@ -25,11 +25,10 @@ return {
         colors = function(hl)
           local get_hlgroup = require("astroui").get_hlgroup
           -- use helper function to get highlight group properties
-          local comment_fg = get_hlgroup("Comment").fg
-          hl.git_branch_fg = comment_fg
-          hl.git_added = comment_fg
-          hl.git_changed = comment_fg
-          hl.git_removed = comment_fg
+          hl.git_branch_fg = "green"
+          hl.git_added = "darkgreen"
+          hl.git_changed = "darkyellow"
+          hl.git_removed = "lightred"
           hl.blank_bg = get_hlgroup("Folded").fg
           hl.file_info_bg = get_hlgroup("Visual").bg
           hl.nav_icon_bg = get_hlgroup("String").fg
@@ -42,7 +41,7 @@ return {
         },
         icon_highlights = {
           file_icon = {
-            statusline = false,
+            statusline = true,
           },
         },
       },
@@ -57,7 +56,6 @@ return {
         hl = { fg = "fg", bg = "bg" },
         -- each element following is a component in astroui.status module
 
-        -- add the vim mode component
         status.component.mode {
           -- enable mode text with padding as well as an icon before it
           mode_text = {
@@ -71,6 +69,7 @@ return {
             color = function() return { main = status.hl.mode_bg(), right = "blank_bg" } end,
           },
         },
+
         -- we want an empty space here so we can use the component builder to make a new section with just an empty string
         status.component.builder {
           { provider = "" },
@@ -81,6 +80,7 @@ return {
             color = { main = "blank_bg", right = "file_info_bg" },
           },
         },
+
         -- add a section for the currently opened file information
         status.component.file_info {
           -- enable the file_icon and disable the highlighting based on filetype
@@ -98,11 +98,13 @@ return {
           git_branch = { padding = { left = 1 } },
           surround = { separator = "none" },
         },
+
         -- add a component for the current git diff if it exists and use no separator for the sections
         status.component.git_diff {
           padding = { left = 1 },
           surround = { separator = "none" },
         },
+
         -- fill the rest of the statusline
         -- the elements after this will appear in the middle of the statusline
         status.component.fill(),
@@ -111,6 +113,7 @@ return {
           lsp_client_names = false,
           surround = { separator = "none", color = "bg" },
         },
+
         -- fill the rest of the statusline
         -- the elements after this will appear on the right of the statusline
         status.component.fill(),
