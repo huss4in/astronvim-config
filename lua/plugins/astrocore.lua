@@ -30,6 +30,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        clipboard = "",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -45,8 +46,8 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
-        -- ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        -- ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["<M-l>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["<M-h>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- -- mappings seen under group name "Buffer"
         -- ["<Leader>bd"] = {
@@ -80,7 +81,7 @@ return {
         ["<Leader>bC"] = false,
         ["<Leader>bd"] = false,
 
-        ["<Leader>c"] = { name = "Close", desc = "❌ Close" },
+        ["<Leader>c"] = { name = "Close", desc = " Close" },
         ["<Leader>cc"] = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
         ["<Leader>cC"] = { function() require("astrocore.buffer").close(0, true) end, desc = "Force Close buffer" },
         ["<Leader>ca"] = { function() require("astrocore.buffer").close_all() end, desc = "All buffers" },

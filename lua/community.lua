@@ -5,13 +5,11 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  -- import/override with your plugins folder
 
-  -- UI
+  -- Colorscheme
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
 
-  -- Language Support
+  -- Pack
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.rust" },
@@ -22,7 +20,10 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.markdown" },
 
-  -- Completions
+  -- Recipes
+  { import = "astrocommunity.recipes.vscode" },
+
+  -- Completion
   { import = "astrocommunity.completion.copilot-lua" },
   {
     "copilot.lua",
@@ -40,8 +41,9 @@ return {
     },
   },
 
-  -- Others
+  -- Bars and Lines
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   {
     "m4xshen/smartcolumn.nvim",
     opts = {
@@ -51,7 +53,4 @@ return {
       -- scope = "file",
     },
   },
-
-  -- VSCode Integration
-  { import = "astrocommunity.recipes.vscode" },
 }
