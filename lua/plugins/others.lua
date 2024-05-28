@@ -16,10 +16,10 @@ return {
     event = "BufRead",
   },
 
-  -- {
-  --   "psliwka/vim-smoothie",
-  --   lazy = false,
-  -- },
+  {
+    "psliwka/vim-smoothie",
+    lazy = false,
+  },
 
   {
     "ggandor/lightspeed.nvim",
