@@ -2,6 +2,11 @@
 return {
 
   {
+    "marko-cerovac/material.nvim",
+    lazy = false,
+  },
+
+  {
     "sitiom/nvim-numbertoggle",
     event = "BufRead",
   },
