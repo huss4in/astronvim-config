@@ -6,36 +6,25 @@
 return {
   "AstroNvim/astrocommunity",
 
+  -- HACK: Bars and Lines
+  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      colorcolumn = "150",
+    },
+  },
+
   -- HACK: Coorscheme
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.vscode-nvim" },
+  --
+  -- HACK: Color
+  { import = "astrocommunity.color.transparent-nvim" },
 
   -- HACK: Diagnostics
-  -- { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
-  -- {
-  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  --   event = "LspAttach",
-  --   -- config = function() require("lsp_lines").toggle() end,
-  --   dependencies = {
-  --     {
-  --       "AstroNvim/astrocore",
-  --       opts = {
-  --         diagnostics = {
-  --           virtual_text = false,
-  --         },
-  --         mappings = {
-  --           n = {
-  --             ["<Leader>uD"] = {
-  --               function() require("lsp_lines").toggle() end,
-  --               desc = "Toggle virtual diagnostic lines",
-  --             },
-  --           },
-  --         },
-  --       },
-  --     },
-  --   },
-  --   opts = {},
-  -- },
 
   -- HACK: Pack
   { import = "astrocommunity.pack.go" },
@@ -101,17 +90,6 @@ return {
           dismiss = "<C-c>",
         },
       },
-    },
-  },
-
-  -- HACK: Bars and Lines
-  { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
-  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-  {
-    "m4xshen/smartcolumn.nvim",
-    opts = {
-      colorcolumn = "150",
-      -- disabled_filetypes = { "help", "text", "markdown" },
     },
   },
 
