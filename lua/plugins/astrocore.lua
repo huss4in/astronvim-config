@@ -46,26 +46,8 @@ return {
       n = {
         -- second key is the lefthand side of the map
 
-        -- navigate buffer tabs
-        ["<M-l>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["<M-h>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-
-        -- -- mappings seen under group name "Buffer"
-        -- ["<Leader>bd"] = {
-        --   function()
-        --     require("astroui.status.heirline").buffer_picker(
-        --       function(bufnr) require("astrocore.buffer").close(bufnr) end
-        --     )
-        --   end,
-        --   desc = "Close buffer from tabline",
-        -- },
-
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        -- ["<Leader>b"] = { desc = "Buffers" },
-
-        -- setting a mapping to false will disable it
-        -- ["<C-S>"] = false,
+        -- ["<M-l>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        -- ["<M-h>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         ["L"] = { "$", desc = "$" },
         ["H"] = { "^", desc = "^" },
@@ -87,14 +69,6 @@ return {
         ["<Leader>cC"] = { function() require("astrocore.buffer").close(0, true) end, desc = "Force Close buffer" },
         ["<Leader>ca"] = { function() require("astrocore.buffer").close_all() end, desc = "All buffers" },
         ["<Leader>co"] = { function() require("astrocore.buffer").close_all(true) end, desc = "Other buffers" },
-        ["<Leader>cb"] = {
-          function()
-            require("astroui.status").heirline.buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Pick buffer",
-        },
 
         ['<Leader>f"'] = {
           ":Telescope registers<cr>",

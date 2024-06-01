@@ -4,29 +4,58 @@
 
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity",
+  "AstroNvim/astrocommunity", -- ~/.local/share/nvim/lazy/astrocommunity/lua/astrocommunity/
 
-  -- HACK: Bars and Lines
-  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  -- HACK: bars-and-lines
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
-  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-  {
-    "m4xshen/smartcolumn.nvim",
-    opts = {
-      colorcolumn = "150",
-    },
-  },
+  -- NOTE: { import = "astrocommunity.bars-and-lines.statuscol-nvim" }, -- lua/community/statuscol.lua
+  -- NOTE: { import = "astrocommunity.bars-and-lines.bufferline-nvim" }, -- lua/community/bufferline.lua
+  -- NOTE: { import = "astrocommunity.bars-and-lines.vim-illuminate" }, -- lua/community/illuminate.lua
 
-  -- HACK: Coorscheme
-  { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.colorscheme.vscode-nvim" },
-  --
-  -- HACK: Color
+  -- HACK: code-runner
+  { import = "astrocommunity.code-runner.compiler-nvim" },
+
+  -- HACK: color
   { import = "astrocommunity.color.transparent-nvim" },
 
-  -- HACK: Diagnostics
+  -- HACK: colorscheme
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.vscode-nvim" },
 
-  -- HACK: Pack
+  -- HACK comment
+
+  -- HACK: completion
+  -- NOTE: { import = "astrocommunity.completion.copilot-lua" }, -- lua/community/copilot.lua
+
+  -- HACK debugging
+
+  -- HACK diagnostics
+
+  -- HACK editing-support
+
+  -- HACK file-explorer
+
+  -- HACK fuzzy-finder
+
+  -- HACK game
+
+  -- HACK git
+
+  -- HACK indent
+
+  -- HACK keybinding
+
+  -- HACK lsp
+
+  -- HACK markdown-and-latex
+
+  -- HACK media
+
+  -- HACK motion
+
+  -- HACK note-taking
+
+  -- HACK: pack
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.vue" },
@@ -46,56 +75,38 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    dependencies = { "HiPhish/rainbow-delimiters.nvim" },
-    opts = function(_, opts)
-      if not opts.scope then opts.scope = {} end
-      opts.scope.show_start = false
-      opts.scope.show_end = false
-      opts.scope.highlight = vim.tbl_get(vim.g, "rainbow_delimiters", "highlight")
-        or {
-          "RainbowDelimiterRed",
-          "RainbowDelimiterYellow",
-          "RainbowDelimiterBlue",
-          "RainbowDelimiterOrange",
-          "RainbowDelimiterGreen",
-          "RainbowDelimiterViolet",
-          "RainbowDelimiterCyan",
-        }
-    end,
+  -- NOTE: { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" }, -- lua/community/rainbow-delimiter-indent-blankline.lua
 
-    config = function(plugin, opts)
-      require(plugin.main).setup(opts)
+  -- HACK programming-language-support
 
-      local hooks = require "ibl.hooks"
-      hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
-    end,
-  },
+  -- HACK project
 
-  -- HACK: Completion
-  { import = "astrocommunity.completion.copilot-lua" },
-  {
-    "copilot.lua",
-    opts = {
-      suggestion = {
-        keymap = {
-          accept = "<C-l>",
-          accept_word = "<C-k>",
-          accept_line = "<C-j>",
-          next = "<M-.>",
-          prev = "<M-,>",
-          dismiss = "<C-c>",
-        },
-      },
-    },
-  },
+  -- HACK: recipes
+  { import = "astrocommunity.recipes.vscode" },
+  -- NOTE: { import = "astrocommunity.recipes.heirline-nvchad-statusline" }, -- lua/community/heirline.lua
 
-  -- HACK: Split and Window
+  -- HACK register
+
+  -- HACK remote-development
+
+  -- HACK scrolling
+
+  -- HACK search
+
+  -- HACK snippet
+
+  -- HACK: split-and-window
   { import = "astrocommunity.split-and-window.mini-map" },
 
-  -- HACK: Recipes
-  { import = "astrocommunity.recipes.vscode" },
+  -- HACK startup
+
+  -- HACK syntax
+
+  -- HACK terminal-integration
+
+  -- HACK test
+
+  -- HACK utility
+
+  -- HACK workflow
 }

@@ -1,7 +1,8 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+
+  { import = "astrocommunity.recipes.heirline-nvchad-statusline" }, -- lua/community/heirline.lua
   {
     "AstroNvim/astroui",
     ---@type AstroUIOpts

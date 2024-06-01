@@ -80,4 +80,61 @@ return {
       )
     end,
   },
+
+  {
+    "marko-cerovac/material.nvim",
+    lazy = false,
+  },
+
+  {
+    "sitiom/nvim-numbertoggle",
+    event = "BufRead",
+  },
+
+  {
+    "tpope/vim-surround",
+    event = "BufRead",
+  },
+
+  {
+    "m-demare/hlargs.nvim",
+    event = "BufRead",
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    config = function() require("hlargs").setup() end,
+  },
+
+  {
+    "psliwka/vim-smoothie",
+    lazy = false,
+  },
+
+  {
+    "ggandor/lightspeed.nvim",
+    event = "BufRead",
+  },
+
+  {
+    "mg979/vim-visual-multi",
+    event = "BufRead",
+  },
+
+  {
+    "gbprod/substitute.nvim",
+    lazy = false,
+    config = function()
+      require("substitute").setup {}
+
+      local x = { noremap = true }
+
+      -- Swap
+      vim.keymap.set("n", "Xs", require("substitute").operator, x)
+      vim.keymap.set("n", "Xss", require("substitute").line, x)
+      vim.keymap.set("x", "Xs", require("substitute").visual, x)
+
+      -- Exchange
+      vim.keymap.set("n", "Xc", require("substitute.exchange").operator, x)
+      vim.keymap.set("n", "Xcc", require("substitute.exchange").line, x)
+      vim.keymap.set("x", "Xc", require("substitute.exchange").visual, x)
+    end,
+  },
 }
