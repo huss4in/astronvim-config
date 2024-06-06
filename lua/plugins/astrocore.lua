@@ -32,6 +32,7 @@ return {
         wrap = false, -- sets vim.opt.wrap
         clipboard = "",
         confirm = true,
+        scrolloff = 5,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
