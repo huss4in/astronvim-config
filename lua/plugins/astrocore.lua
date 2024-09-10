@@ -65,7 +65,7 @@ return {
         ["<Leader>bC"] = false,
         ["<Leader>bd"] = false,
 
-        ["<Leader>c"] = { name = "Close", desc = " Close" },
+        ["<Leader>c"] = { desc = " Close" },
         ["<Leader>cc"] = { function() require("astrocore.buffer").close() end, desc = "Close buffer" },
         ["<Leader>cC"] = { function() require("astrocore.buffer").close(0, true) end, desc = "Force Close buffer" },
         ["<Leader>ca"] = { function() require("astrocore.buffer").close_all() end, desc = "All buffers" },
