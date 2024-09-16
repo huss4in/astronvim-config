@@ -22,38 +22,38 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.vscode-nvim" },
 
-  -- HACK comment
+  -- HACK: comment
 
   -- HACK: completion
   -- NOTE: { import = "astrocommunity.completion.copilot-lua" }, -- lua/community/copilot.lua
 
-  -- HACK debugging
+  -- HACK: debugging
 
-  -- HACK diagnostics
+  -- HACK: diagnostics
 
-  -- HACK editing-support
+  -- HACK: editing-support
 
-  -- HACK file-explorer
+  -- HACK: file-explorer
 
-  -- HACK fuzzy-finder
+  -- HACK: fuzzy-finder
 
-  -- HACK game
+  -- HACK: game
 
-  -- HACK git
+  -- HACK: git
 
-  -- HACK indent
+  -- HACK: indent
 
-  -- HACK keybinding
+  -- HACK: keybinding
 
-  -- HACK lsp
+  -- HACK: lsp
 
-  -- HACK markdown-and-latex
+  -- HACK: markdown-and-latex
 
-  -- HACK media
+  -- HACK: media
 
-  -- HACK motion
+  -- HACK: motion
 
-  -- HACK note-taking
+  -- HACK: note-taking
 
   -- HACK: pack
   { import = "astrocommunity.pack.go" },
@@ -71,42 +71,43 @@ return {
   { import = "astrocommunity.pack.dart" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.chezmoi" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.typescript" },
   -- NOTE: { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" }, -- lua/community/rainbow-delimiter-indent-blankline.lua
 
-  -- HACK programming-language-support
+  -- HACK: programming-language-support
 
-  -- HACK project
+  -- HACK: project
 
   -- HACK: recipes
   { import = "astrocommunity.recipes.vscode" },
   -- NOTE: { import = "astrocommunity.recipes.heirline-nvchad-statusline" }, -- lua/community/heirline.lua
 
-  -- HACK register
+  -- HACK: register
 
-  -- HACK remote-development
+  -- HACK: remote-development
 
-  -- HACK scrolling
+  -- HACK: scrolling
 
-  -- HACK search
+  -- HACK: search
 
-  -- HACK snippet
+  -- HACK: snippet
 
   -- HACK: split-and-window
   { import = "astrocommunity.split-and-window.mini-map" },
 
-  -- HACK startup
+  -- HACK: startup
 
-  -- HACK syntax
+  -- HACK: syntax
 
-  -- HACK terminal-integration
+  -- HACK: terminal-integration
 
-  -- HACK test
+  -- HACK: test
 
-  -- HACK utility
+  -- HACK: utility
 
-  -- HACK workflow
+  -- HACK: workflow
 }

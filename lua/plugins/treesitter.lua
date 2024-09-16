@@ -7,6 +7,9 @@ return {
     ensure_installed = {
       "lua",
       "vim",
+      "html",
+      "gotmpl",
+      "ssh_config",
       -- add more arguments for adding more treesitter parsers
     },
   },
