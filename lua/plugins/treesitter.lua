@@ -9,7 +9,6 @@ return {
       "vim",
       "html",
       "gotmpl",
-      "ssh_config",
       -- add more arguments for adding more treesitter parsers
     },
   },
