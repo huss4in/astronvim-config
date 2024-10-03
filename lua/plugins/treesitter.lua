@@ -4,6 +4,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
+    highlight = {
+      disable = { "gitcommit" },
+    },
     ensure_installed = {
       "lua",
       "vim",
