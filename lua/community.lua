@@ -69,6 +69,7 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.dart" },
+  { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.chezmoi" },
