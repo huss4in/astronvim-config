@@ -75,6 +75,15 @@ return {
           ":Telescope registers<cr>",
           desc = "Find registers",
         },
+
+        ["grr"] = {
+          "<cmd>Telescope lsp_references<cr>",
+          desc = "LSP References",
+        },
+        ["gd"] = {
+          "<cmd>Telescope lsp_definitions<cr>",
+          desc = "LSP Definitions",
+        },
       },
       i = {
         ["<A-k>"] = { "<esc>:m .-2<cr>==gi", desc = "Move line down" },
