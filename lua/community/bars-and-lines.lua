@@ -1,8 +1,8 @@
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity", -- lua/community.lua
+  "AstroNvim/astrocommunity",
 
-  { import = "astrocommunity.bars-and-lines.bufferline-nvim" }, -- lua/community/bufferline.lua
+  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   {
     "akinsho/bufferline.nvim",
     dependencies = {
@@ -44,6 +44,18 @@ return {
           },
         },
       },
+    },
+  },
+
+  { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
+
+  { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+
+  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      colorcolumn = "150",
     },
   },
 }

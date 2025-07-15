@@ -2,6 +2,8 @@
 return {
   "AstroNvim/astrocommunity",
 
+  { import = "astrocommunity.recipes.vscode" },
+
   { import = "astrocommunity.recipes.heirline-nvchad-statusline" }, -- lua/community/heirline.lua
   {
     "AstroNvim/astroui",
@@ -96,8 +98,15 @@ return {
 
         status.component.cmd_info { padding = { right = 0, left = 0 } },
         status.component.diagnostics { surround = { separator = "right" } },
-        status.component.lsp { lsp_progress = false, padding = { left = 0, right = 0 } },
-        status.component.treesitter { padding = { right = 1 } },
+        status.component.lsp {
+          lsp_progress = false,
+          padding = { left = 0, right = 0 },
+          surround = { separator = "none", color = { right = "bg", main = "bg" } },
+        },
+        status.component.treesitter {
+          padding = { right = 0 },
+          surround = { separator = "right", color = "green" },
+        },
 
         -- NvChad has some nice icons to go along with information, so we can create a parent component to do this
         -- all of the children of this table will be treated together as a single component
@@ -111,7 +120,7 @@ return {
             -- set the foreground color to be used for the icon
             hl = { fg = "bg" },
             -- use the right separator and define the background color
-            surround = { separator = "right", color = "folder_icon_bg" },
+            surround = { separator = "right", color = { left = "green", main = "folder_icon_bg" } },
           },
           -- add a file information component and only show the current working directory name
           status.component.file_info {
